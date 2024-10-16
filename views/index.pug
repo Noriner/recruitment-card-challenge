@@ -1,23 +1,58 @@
 extends defaults/layout.pug
 include defaults/mixins.pug
 block content
-    .container
+    
+    .container        
         .card__preview
-            .card__preview--number XXXX XXXX XXXX XXXX
-            .card__preview--holder Jan Kowalskiii
+            .card__wrapper
+                img.background(src=require('../images/background.jpg') alt='Background image')
+                .card__front
+                    img.chip(src=require('../images/chip.png') alt='Chip picture')
+                    .card__preview--number#CardNumberDisplay 
+                    .header
+                        .card__preview--label Card Holder
+                        .card__preview--label Expires
+                    .display
+                        .card__preview--holder#CardHolderDisplay 
+                        .expdate 
+                            .card__preview--expdate#MonthDisplay 
+                            .card__preview--expdate /
+                            .card__preview--expdate#YearDisplay            
+                .card__back
+                    .blackbar
+                    .card__preview--label CVV
+                    .card__preview--cvvnumber#CvvDisplay 
         form.card__form
-            input.card__form--input(type="text" placeholder="Card number")
+            .title Card Number
+            input.card__form--input#CardNumberInput(type="text" placeholder="")
+            .title Card Name
+            input.card__form--input#CardHolderInput(type="text" placeholder="")
             label(for="card__form--select")
-            select#card__form--select
-                option 01
-                option 02
-                option 03
-                option 04
-                option 05
-                option 06
-                option 07
-                option 08
-                option 09
-                option 10
-                option 11
-                option 12
+            .header
+                .title Expiration Date
+                .title CVV
+            .expdate
+                select.card__form--select#CardMonthInput
+                    option(disabled selected) Month
+                    option 01
+                    option 02
+                    option 03
+                    option 04
+                    option 05
+                    option 06
+                    option 07
+                    option 08
+                    option 09
+                    option 10
+                    option 11
+                    option 12
+                select.card__form--select#CardYearInput
+                    option(disabled selected) Year
+                    option 2025
+                    option 2026
+                    option 2027
+                    option 2028
+                    option 2029
+                    option 2030
+                input.card__form--input#CVV(type="text" placeholder="")
+            button.submit Submit

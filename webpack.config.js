@@ -86,19 +86,19 @@ module.exports = {
                 },
             },
             {
-                test: /\.(jp?g|png|gif|svg)$/i,
-                // type: 'asset/resource',
-                // generator: {
-                //     filename: 'images/[name][ext]'
-                // },
-                use: [
-                    {
-                        loader: "file-loader",
-                        options: {
-                            name: "images/[name].[ext]",
-                        },
-                    }
-                ],
+                test: /\.(jpg|png|gif|svg)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'images/[name][ext]',
+                },
+                // use: [
+                //     {
+                //         loader: 'asset/resource',
+                //         options: {
+                //             name: "images/[name].[ext]",
+                //         },
+                //     }
+                // ],
             },
         ],
     },

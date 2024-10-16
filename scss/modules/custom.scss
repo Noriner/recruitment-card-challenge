@@ -1,0 +1,181 @@
+.container{
+    max-width: 50%;
+    margin: 0px auto;
+    text-align: center;
+    
+    .card__preview{
+        background-color: transparent;
+        perspective: 1000px;       
+        width: 75%;
+        margin: 0 auto;
+        transform-style: preserve-3d;
+
+        .card__wrapper{
+            position: relative;
+            top: 140px;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            
+            .card__front, .card__back{ 
+                color: #fff;   
+                min-height: 100%;           
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                text-align: left;
+            }
+
+            .card__front{  
+                
+                .chip{
+                    margin: 5%;
+                }
+
+                .card__preview--number{
+                    margin: 5% 5%;
+                    font-size: 2.5em;
+                    letter-spacing: 2px;
+                }
+
+                .header{
+                    margin: 10% 5% 2% 5%;
+                    .card__preview--label{
+                        display: inline-block;
+                        color: #DDDFE2;
+                    }
+                    :last-child{
+                        position: absolute;
+                        left: 80%;
+                    }
+                }
+                
+                .display{
+                    .card__preview--holder{
+                        display: inline-block;
+                        margin: 0% 5%;
+                        font-size: 1.5em;
+                    }
+
+                    .expdate{
+                        display: inline-block;
+                        position: absolute;
+                        right: 10%;
+
+                        .card__preview--expdate{
+                            display: inline-block;
+                            font-size: 1.5em;
+                        }
+                    }                    
+                }                
+            }
+
+            .card__back{
+                transform: rotateY(180deg);
+                text-align: right;
+
+                .blackbar{
+                    margin: 10% 0 5% 0;
+                    background-color: rgba(0, 0, 0, 0.8);
+                    width: 100%;
+                    height: 20%;
+                }
+
+                .card__preview--label{
+                    margin-right: 10%;
+                }
+
+                .card__preview--cvvnumber{
+                    background-color: #fff;
+                    color: #000;
+                    margin: 10px auto;
+                    width: 90%;
+                    min-height: 5%;
+                    font-size: 1.5em;
+                    border-radius: 5px;
+                    padding: 10px;
+                }
+            }
+        }
+
+        .active {
+            transform: rotateY(180deg);
+        }
+
+        .background{
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+        }        
+    }
+
+    .card__form{
+        width: 90%;
+        margin: 0 auto;
+        padding: 160px 30px 10px 30px;
+        text-align: left;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+
+        .title{
+            display: inline-block;
+            margin: 10px 0;
+            font-size: 1em;
+        }
+        
+        .header{
+            :first-child{
+                width: 70%;
+            }
+        }
+
+        .card__form--input{
+            box-sizing: border-box;
+            width: 100%;
+            padding: 10px;
+            margin: 0;
+            font-size: 1.2em;
+            border: 1px solid #DDDFE2;
+            border-radius: 5px;
+        }
+
+        .expdate{
+            margin-bottom: 15px;
+
+            .card__form--input{
+                max-width: 30%;
+                padding: 2.5%;
+                border-radius: 5px;
+                border: 1px solid #DDDFE2;
+            }
+    
+            .card__form--select{
+                width: 30%;
+                text-align: center;
+                border-radius: 5px;
+                margin-right: 5%;
+                padding: 2.5%;
+                border: 1px solid #DDDFE2;
+                font-size: 1.2em;
+            }
+        }
+
+        .submit{
+            width: 100%;
+            margin: 10px auto;
+            padding: 10px;
+            color: #fff;
+            font-size: 1.2em;
+            background-color: #0055D4;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 1px 1px 4px 0px rgba(0, 85, 212, 83);
+            cursor: pointer;
+        }
+    }
+
+}
